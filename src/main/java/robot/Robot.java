@@ -15,7 +15,8 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-
+import robot.subsystems.Commands.Examplecommand;
+import robot.subsystems.Examplesubsystem;
 
 
 /**
@@ -26,6 +27,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * project.
  */
 public class Robot extends TimedRobot {
+    public static Examplesubsystem example = new Examplesubsystem();
     public static OI m_oi;
 
     Command m_autonomousCommand;
@@ -37,6 +39,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
+
         m_oi = new OI();
     }
 
@@ -102,6 +105,8 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
+        Examplecommand yaaaaa = new Examplecommand();
+        yaaaaa.start();
     }
 
     /**

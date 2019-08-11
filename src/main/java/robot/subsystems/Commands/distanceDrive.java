@@ -6,20 +6,24 @@ import robot.Robot;
 
 public class distanceDrive extends Command {
 private Robot robot = new Robot();
+private int distance;
+
+    protected distanceDrive(int distance){
+        this.distance = distance;
+    }
 
     @Override
     protected void initialize() {
-
     }
 
     @Override
     protected void execute() {
-        robot.example.setspeed(0.4,0.4);
+        robot.example.setspeed(0.2,0.2);
     }
 
     @Override
     protected boolean isFinished() {
-        return robot.example.getLeftDistance() > 1 && robot.example.getRightDistance() > 1;
+        return robot.example.getLeftDistance() > distance && robot.example.getRightDistance() > distance;
     }
 
     @Override
@@ -33,3 +37,4 @@ private Robot robot = new Robot();
     }
 
 }
+

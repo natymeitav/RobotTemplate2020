@@ -1,6 +1,5 @@
 package robot.subsystems.Commands;
 
-import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
@@ -18,7 +17,7 @@ private int distance;
 
     @Override
     protected void execute() {
-        robot.example.setspeed(0.2,0.2);
+        robot.example.setSpeed(0.2,0.2);
     }
 
     @Override
@@ -33,7 +32,7 @@ private int distance;
 
     @Override
     protected void end() {
-        robot.example.setspeed(0,0);
+        robot.example.setSpeed(0,0);
     }
 
 }

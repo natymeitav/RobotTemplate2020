@@ -2,7 +2,6 @@ package robot.subsystems.Commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
-import robot.subsystems.Constants;
 
 public class Examplecommand extends Command {
 
@@ -13,7 +12,7 @@ public class Examplecommand extends Command {
 
     @Override
     protected void execute() {
-        Robot.example.setspeed(-0.1,0.1);
+        Robot.example.setSpeed(-0.1,0.1);
         }
 
     @Override
@@ -31,7 +30,7 @@ public class Examplecommand extends Command {
 
     @Override
     protected void end() {
-        Robot.example.setspeed(0,0);
+        Robot.example.setSpeed(0,0);
 
     }
 }

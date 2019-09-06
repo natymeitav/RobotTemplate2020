@@ -26,15 +26,19 @@ public class Examplesubsystem extends Subsystem {
         leftMaster.setSensorPhase(Constants.LEFT_ENCODER_REVERSED);
         rightMaster.setSensorPhase(Constants.RIGHT_ENCODER_REVERSED);
     }
-    public void setspeed(double SpeedR, double SpeedL){
-        if ((SpeedR > -1 && SpeedR < 1 )&&(SpeedL > -1 && SpeedL < 1 )){
-            rightMaster.set(ControlMode.PercentOutput,SpeedR);
-            leftMaster.set(ControlMode.PercentOutput,SpeedL);
-        }
-
+    public void setSpeed(double SpeedL, double SpeedR){
+        setLeftSpeed(SpeedL);
+        setRightSpeed(SpeedR);
 
     }
 
+    public void setLeftSpeed(double lspeed){
+        leftMaster.set(ControlMode.PercentOutput,lspeed);
+    }
+
+    public void setRightSpeed(double rspeed){
+        rightMaster.set(ControlMode.PercentOutput,rspeed);
+    }
     private double convertLeftTicksToDistance(int ticks) {
         return ticks / Constants.LEFT_TICKS_PER_METER;
     }
